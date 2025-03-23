@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   web:
-    image: ngnix:latest
-    container_name: website
-    volumes:
-      - /var/www/website/public:/usr/share/ngnix/html
+    container_name: my_website
+    build: .
     ports:
       - "8080:80"
     restart: always
+    volumes:
+      - ./public:/usr/share/nginx/html
