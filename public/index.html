@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/icon type" href="assets/icons/favicon.ico" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/skills.css" />
+    <link rel="stylesheet" href="assets/css/experience.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/phone-layout.css" />
+    <title>Hugo Juarez</title>
+  </head>
+  <body>
+    <nav>
+      <div id ="logo">
+        <img id="logo-img" src="assets/images/code.svg" alt="Logo" />
+        <h1>Hugo Juarez</h1>
+      </div>
+      
+      <div>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <article id="container">
+      <section id="home">
+        <div class="page">
+          <div class="home-text">
+            <p>Hello World! I am</p>
+            <h1>Hugo <span class="last-name">Juarez</span></h1>
+            <h2>Mechatronic Engineer</h2>
+            <div class="home-icons">
+              <div class="home-icon">
+                <img src="assets/images/circuit.svg" alt="circuit" />
+                <p>PCB</p>
+              </div>
+              <div class="home-icon">
+                <img src="assets/images/cpp.svg" alt="C/C++" />
+                <p>C/C++</p>
+              </div>
+              <div class="home-icon">
+                <img src="assets/images/stm32.svg" alt="STM32" />
+                <p>STM32</p>
+              </div>
+              <div class="home-icon">
+                <img src="assets/images/more.svg" alt="more" />
+                <p>More</p>
+              </div>
+            </div>
+            <a
+              href="assets/download/CV_HugoJuarez.pdf"
+              download=""
+              class="download-btn"
+            >
+              Download CV
+              <img src="assets/images/download.svg" alt="Download CV" />
+            </a>
+          </div>
+          <div class="home-images">
+            <img src="assets/images/drone.png" alt="" />
+            <div class="home-images-socials">
+              <a href="https://github.com/hugo-juarez" target="_blank"
+                ><img src="assets/images/github.svg" alt=""
+              /></a>
+              <a href="https://www.linkedin.com/in/hugos-juarez" target="_blank"
+                ><img src="assets/images/linkedin.svg" alt=""
+              /></a>
+              <a href="assets/download/CV_HugoJuarez.pdf" download=""
+                ><img src="assets/images/download.svg" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><img src="assets/images/down.svg" /></div>
+      </section>
+      <section id="about">
+        <div class="page">
+          <div class="about-text">
+            <h2>So, who am I?</h2>
+            <p>
+              I am a passionate Mechatronics Engineer specializing in
+              <strong>Embedded Systems, Robotics,</strong> and
+              <strong>Industrial Automation</strong>. My expertise lies in
+              bridging hardware and software to develop
+              <strong>cyber-physical systems</strong>, optimize
+              <strong>industrial processes</strong>, and innovate in
+              <strong>embedded applications</strong>.
+            </p>
+            <p>
+              Currently, I work as a
+              <strong
+                >Regional Automation Process Engineer at Procter &
+                Gamble</strong
+              >, developing data-driven automation solutions and
+              <strong>troubleshooting automated guided vehicles (AGVs)</strong>.
+              My past experiences include working on
+              <strong>autonomous drones, industrial automation</strong>, and
+              <strong>cloud-integrated cyber-physical systems</strong>.
+            </p>
+          </div>
+          <img src="assets/images/pfp.png" alt="" />
+        </div>
+        <div class="footer"><img src="assets/images/down.svg" /></div>
+      </section>
+      <section id="skills">
+        <div class="page">
+          <h2>Skills</h2>
+          <div id="skill-container"></div>
+        </div>
+        <div class="footer"><img src="assets/images/down.svg" /></div>
+      </section>
+      <section id="experience">
+        <div class="page">
+          <div class="experiences left">
+            <div class="job-exp">
+              <h2>Centro de Inteligencia Voluntario CIV</h2>
+              <h3>Embedded System Programmer</h3>
+              <ul>
+                <li>
+                  Developed firmware for an
+                  <strong>autonomous drone in C++</strong> using
+                  <strong>ESP-32</strong> micro-controller.
+                </li>
+                <li>
+                  Implemented <strong>PID</strong> algorithms and
+                  <strong>I2C sensor fusion</strong> (IMU, barometer) for stable
+                  flight.
+                </li>
+                <li>
+                  Integrated computer vision techniques in
+                  <strong>Python for object detection</strong>.
+                </li>
+              </ul>
+            </div>
+            <video autoplay muted loop>
+              <source src="assets/videos/Drone_Video.mp4" type="video/mp4" />
+              Your browser does not support MP4 video tag.
+            </video>
+            <div class="job-exp">
+              <h2>MotorHub</h2>
+              <h3>Embedded System Programmer</h3>
+              <ul>
+                <li>
+                  Developed firmware for two
+                  <strong>PIC based AGVs</strong>, simulating industrial
+                  automation tasks.
+                </li>
+                <li>
+                  Programmed
+                  <strong>Bluetooth-based UART</strong> AGV communication for
+                  collision avoidance.
+                </li>
+                <li>
+                  <strong>Designed and tested PCB layouts</strong> for motor
+                  control and sensor integration.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <picture id="experience-tree">
+            
+            <source
+              srcset="assets/images/experience-tree-phone.svg"
+              media="(max-width: 1340px)"
+            />
+            <source srcset="assets/images/experience-tree.svg" media="(max-width: 1675px)"/>
+            <img
+              src="assets/images/experience-tree-full.svg"
+              alt=""
+              
+            />
+          </picture>
+          <div class="experiences right">
+            <div class="job-exp">
+              <h2>Procter & Gamble</h2>
+              <h3>Regional Automation Process Engineer</h3>
+              <ul>
+                <li>
+                  Designed a <strong>Windows application (Flutter)</strong> for
+                  real-time data visualization and automation.
+                </li>
+                <li>
+                  Developed <strong>Python & SQL</strong>-based analytics tools
+                  to monitor and troubleshoot AGV fleet operations.
+                </li>
+                <li>
+                  Implemented <strong>Kepware OPC</strong> solutions, optimizing
+                  data flow across industrial systems.
+                </li>
+              </ul>
+            </div>
+            <div class="job-exp">
+              <h2>Siemens</h2>
+              <h3>Software & Cloud Programmer</h3>
+              <ul>
+                <li>
+                  Built a cyber-physical system integrating
+                  <strong>RFID</strong> tracking and
+                  <strong>AWS cloud storage</strong>.
+                </li>
+                <li>
+                  Developed
+                  <strong>C++-based computer vision</strong> algorithms for
+                  <strong>object detection and classification</strong>.
+                </li>
+                <li>
+                  Optimized embedded-to-cloud communication using
+                  <strong>MQTT and AWS IoT (Python/Node.js)</strong>.
+                </li>
+              </ul>
+            </div>
+            <video autoplay muted loop>
+              <source
+                src="assets/videos/MotorHub_Project.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support MP4 video tag.
+            </video>
+          </div>
+        </div>
+        <div class="footer"><img src="assets/images/down.svg" /></div>
+      </section>
+      <section id="experience-phone">
+        <div class="page">
+          <div class="job-exp">
+            <h2>Procter & Gamble</h2>
+            <h3>Regional Automation Process Engineer</h3>
+            <ul>
+              <li>
+                Designed a <strong>Windows application (Flutter)</strong> for
+                real-time data visualization and automation.
+              </li>
+              <li>
+                Developed <strong>Python & SQL</strong>-based analytics tools
+                to monitor and troubleshoot AGV fleet operations.
+              </li>
+              <li>
+                Implemented <strong>Kepware OPC</strong> solutions, optimizing
+                data flow across industrial systems.
+              </li>
+            </ul>
+          </div>
+          <div class="job-exp">
+            <h2>Centro de Inteligencia Voluntario CIV</h2>
+            <h3>Embedded System Programmer</h3>
+            <ul>
+              <li>
+                Developed firmware for an
+                <strong>autonomous drone in C++</strong> using
+                <strong>ESP-32</strong> micro-controller.
+              </li>
+              <li>
+                Implemented <strong>PID</strong> algorithms and
+                <strong>I2C sensor fusion</strong> (IMU, barometer) for stable
+                flight.
+              </li>
+              <li>
+                Integrated computer vision techniques in
+                <strong>Python for object detection</strong>.
+              </li>
+            </ul>
+          </div>
+          <video autoplay muted loop>
+            <source src="assets/videos/Drone_Video.mp4" type="video/mp4" />
+            Your browser does not support MP4 video tag.
+          </video>
+          <div class="job-exp">
+            <h2>Siemens</h2>
+            <h3>Software & Cloud Programmer</h3>
+            <ul>
+              <li>
+                Built a cyber-physical system integrating
+                <strong>RFID</strong> tracking and
+                <strong>AWS cloud storage</strong>.
+              </li>
+              <li>
+                Developed
+                <strong>C++-based computer vision</strong> algorithms for
+                <strong>object detection and classification</strong>.
+              </li>
+              <li>
+                Optimized embedded-to-cloud communication using
+                <strong>MQTT and AWS IoT (Python/Node.js)</strong>.
+              </li>
+            </ul>
+          </div>
+          <div class="job-exp">
+            <h2>MotorHub</h2>
+            <h3>Embedded System Programmer</h3>
+            <ul>
+              <li>
+                Developed firmware for two
+                <strong>PIC based AGVs</strong>, simulating industrial
+                automation tasks.
+              </li>
+              <li>
+                Programmed
+                <strong>Bluetooth-based UART</strong> AGV communication for
+                collision avoidance.
+              </li>
+              <li>
+                <strong>Designed and tested PCB layouts</strong> for motor
+                control and sensor integration.
+              </li>
+            </ul>
+          </div>
+          <video autoplay muted loop>
+            <source
+              src="assets/videos/MotorHub_Project.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support MP4 video tag.
+          </video>
+        </div>
+        <div class="footer"><img src="assets/images/down.svg" /></div>
+      </section>
+      <section id="contact">
+        <div class="page">
+          <h2>Find me on...</h2>
+          <div class="contact-info">
+            <h3>Github:</h3>
+            <a
+              href="https://github.com/hugo-juarez"
+              class="contact-link"
+              target="_blank"
+            >
+              <img src="assets/images/github.svg" alt="" />
+              <p>github.com/hugo-juarez</p>
+            </a>
+          </div>
+          <div class="contact-info">
+            <h3>Linkedin:</h3>
+            <a
+              href="https://www.linkedin.com/in/hugos-juarez/"
+              class="contact-link"
+              target="_blank"
+            >
+              <img src="assets/images/linkedin.svg" alt="" />
+              <p>linkedin.com/in/hugos-juarez</p>
+            </a>
+          </div>
+          <a
+            href="assets/download/CV_HugoJuarez.pdf"
+            download=""
+            class="download-btn"
+          >
+            Download CV
+            <img src="assets/images/download.svg" alt="Download CV" />
+          </a>
+        </div>
+        <div id="last-footer" class="footer">@hugo-juarez</div>
+      </section>
+    </article>
+
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/add_skills.js"></script>
+  </body>
+</html>

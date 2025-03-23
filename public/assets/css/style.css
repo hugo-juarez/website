@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+body{
+    background-color: #2F2F2F;
+    font-family: "Fira Code", monospace;
+    color: #E0E2DB;
+}
+
+
+/* Nav bar */
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#logo-img {
+    aspect-ratio: 1/1;
+    width: 32px;
+}
+
+.nav-link{
+    padding: 5px 0;
+    text-decoration: none;
+    font-weight: 500;
+    color: #E0E2DB;
+}
+
+.nav-link.active {
+    color: #DB4C40;
+    border-bottom: 2px solid #DB4C40;
+    
+}
+
+
+nav {
+    padding: 34px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+nav > div{
+    display: flex;
+    gap: 24px;
+}
+
+/* Container */
+
+#container {
+    scroll-snap-type: y mandatory; /* Vertical scroll snap */
+    overflow-y: scroll; /* Allow scrolling */
+    height: calc(100vh - 100px); /* Full viewport height */
+    scroll-padding-top: 0px; /* Adjust for sticky nav if needed */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#container::-webkit-scrollbar {
+    display: none;
+}
+
+#container > section {
+    scroll-snap-align: start; /* Ensures snapping at the start of each section */
+    height: 100%; /* Each section takes the full viewport */
+}
+
+.page {
+    padding: 0 60px;
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* Footer */
+
+.footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#last-footer {
+    color: #e0e2db70;
+}
+
+#experience-phone {
+    display: none;
+}

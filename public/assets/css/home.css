@@ -1,0 +1,88 @@
+/* home */
+
+.home-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-text > p {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.home-text > h1 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.home-text > h1 >span.last-name {
+    color: #FA8334;
+}
+
+.home-text > h2{
+    color: #DB4C40;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.home-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.home-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.home-icon > p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.download-btn {
+    width: 300px;
+    padding: 9px 0;
+    border-radius: 20px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    background-color: #DB4C40;
+}
+
+.download-btn:hover{
+    background-color: #FA8334;
+}
+
+.download-btn{
+    text-decoration: none;
+    color: #E0E2DB;
+}
+
+.download-btn > img {
+    aspect-ratio: 1/1;
+    width: 20px;
+
+}
+
+/* Home Images */
+.home-images {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.home-images-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}

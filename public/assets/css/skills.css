@@ -1,0 +1,39 @@
+#skills > .page {
+    justify-content: center;
+    flex-direction: column;
+}
+
+#skills > .page >h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+
+#skill-container {
+    overflow-y: scroll;
+    max-height: 60vh;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.skill {
+    width: 100px; /* Fixed width for better responsiveness */
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.skill > img {
+    height: 100%;
+}
+
+.skill:hover{
+    background-color: #DB4C40;
+}

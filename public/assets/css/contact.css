@@ -1,0 +1,35 @@
+#contact > .page {
+    height: calc(100% - 260px);
+    padding: 80px;
+    flex-direction: column;
+}
+
+#contact > .page > h2{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.contact-info > h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.contact-link {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: #E0E2DB;
+}
+
+.contact-link:hover {
+    color: #DB4C40;
+    text-decoration: underline solid #DB4C40;
+}
+
+
+.contact-link >img {
+    width: 20px;
+}

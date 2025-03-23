@@ -1,0 +1,26 @@
+.about-text{
+    width: 40%;
+}
+
+#about > .page > img {
+    margin: 0 80px;
+    height: 100%;
+}
+
+.about-text > h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 64px;
+}
+
+.about-text > p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 58px;
+    
+}
+
+.about-text > p > strong {
+    font-weight: 700;
+}

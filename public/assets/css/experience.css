@@ -1,0 +1,62 @@
+#experience > .page{
+    justify-content: space-between;
+    align-items: start;
+}
+
+#experience-tree{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 100%;
+}
+
+.job-exp {
+    width: 454px;
+}
+
+.job-exp > h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.job-exp > h3 {
+    color: #FA8334;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.job-exp > ul {
+    list-style-type: circle;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.job-exp > ul > li {
+    line-height: 15px;
+}
+
+.job-exp > ul > li > strong {
+    font-weight: 700;
+}
+
+.experiences {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.experiences.right {
+    align-items: end;
+}
+
+.experiences.left {
+    padding-top: 100px;
+    height: calc(100% - 100px);
+}
+
+.experiences > video {
+    width: 320px;
+}

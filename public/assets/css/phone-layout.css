@@ -1,0 +1,233 @@
+@media screen and (max-width: 1450px){
+    /* Home */
+
+    #home > .page {
+        gap: 20px;
+    }
+    .home-text > p {
+        font-size: 20px;
+    }
+
+    .home-text > h1 {
+        font-size: 48px;
+    }
+
+    .home-text > h2 {
+        font-size: 32px;
+    }
+
+    .home-icon > img {
+        width: 50px;
+    }
+
+    .home-icon > p {
+        font-size: 16px;
+    }
+
+    .home-images {
+        gap: 20px;
+    }
+
+    .home-images > img {
+        width: 400px;
+    }
+
+    /* About */
+    #about > .page > img {
+        margin: 0;
+        height: 75%;
+    }
+
+    .about-text > h2 {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .about-text > p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Skills */
+    #skills > .page >h2 {
+        font-size: 32px;
+    }
+
+    /* Experience */
+    .job-exp {
+        width: 400px;
+    }
+
+    .job-exp > h2{
+        font-size: 20px;
+    }
+    
+    .job-exp > h3 {
+        font-size: 16px;
+    }
+
+    .job-exp > ul {
+        font-size: 12px;
+    }
+
+    .experiences > video {
+        width: 240px;
+    }
+
+    /* Contact */
+    #contact > .page > h2{
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    /* Experience */
+    .job-exp {
+        width: 220px;
+    }
+
+    .job-exp > h2{
+        font-size: 16px;
+    }
+    
+    .job-exp > h3 {
+        font-size: 12px;
+    }
+
+    .job-exp > ul {
+        font-size: 10px;
+    }
+
+    .experiences > video {
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    nav > div {
+        display: none;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    /* Home */
+    #home > .page{
+        justify-content: center;
+    }
+
+    .home-text{
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-icons {
+        width: 100%;
+    }
+
+    .home-images {
+        display: none;
+    }
+
+
+    .home-icon > img {
+        width: 40px;
+    }
+
+    .download-btn {
+        width: 250px;
+    }
+    
+    /* About Me */
+    #about > .page {
+        flex-direction: column-reverse;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-text > h2 {
+        font-size: 22px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .about-text > p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* Skills */
+    #skills > .page >h2 {
+        font-size: 22px;
+        margin-bottom: 32px;
+    }
+
+    #skill-container {
+        width: 100%;
+        gap: 0px;
+    }
+
+    .skill {
+        width: 70px;
+        height: 70px;
+        font-size: 12px;
+    }
+
+    /* Experience */
+    .job-exp {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    #experience{
+        display: none;
+    }
+
+    #experience-phone {
+        display: block;
+    }
+
+    #experience-phone > .page {
+        overflow-y: scroll;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    #experience-phone > .page > video {
+        width: 300px;
+        margin-bottom: 32px;
+    }
+
+    /* Contact */
+    #contact > .page > h2{
+        font-size: 22px;
+    }
+
+    .contact-info > h3 {
+        font-size: 18px;
+    }
+
+    .contact-link {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .contact-link > img {
+        width: 10px;
+    }
+
+    #contact > .page > .download-btn {
+        font-size: 16px;
+    }
+
+    #contact > .page > .download-btn > img {
+        width: 16px;
+    }
+    
+}
