@@ -57,6 +57,7 @@
     height: calc(100% - 100px);
 }
 
-.experiences > video {
+.experiences > iframe {
     width: 320px;
+    height: 180px;
 }
