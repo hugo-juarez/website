@@ -70,7 +70,7 @@
         font-size: 12px;
     }
 
-    .experiences > iframe {
+    .experiences > video-container {
         width: 240px;
         height: 135px;
     }
@@ -101,7 +101,7 @@
         font-size: 10px;
     }
 
-    .experiences > iframe {
+    .experiences > video-container {
         width: 240px;
         height: 135px;
     }
@@ -201,7 +201,7 @@
         justify-content: start;
     }
 
-    #experience-phone > .page > iframe {
+    #experience-phone > .page > video-container {
         width: 300px;
         height: 169px;
         margin-bottom: 32px;
