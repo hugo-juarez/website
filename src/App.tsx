@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Header from './components/Header/Header';
+import Header from './components/Header';
 import Home from './pages/Home/Home';
 import get_default_theme from './utilities/get_default_theme';
 
