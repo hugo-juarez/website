@@ -10,7 +10,7 @@ function Header({ page, onPageSelect, onThemeChange }: HeaderProps) {
   const selectedSyle = 'dark:bg-dark-surface dark:text-dark-text';
 
   return (
-    <div className="flex flex-row justify-between items-center px-8 py-4">
+    <div className="flex flex-row justify-between items-center">
       <h1 className="font-mono w-30 font-bold">Hugo Juarez</h1>
       <div className="flex flex-row gap-8 text-dark-text-muted">
         <button

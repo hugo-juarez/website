@@ -20,7 +20,7 @@ function App() {
   }, [theme]);
 
   return (
-    <div className="bg-light-bg text-light-text h-screen dark:bg-dark-bg dark:text-dark-text">
+    <div className="px-8 py-4 bg-light-bg text-light-text h-screen dark:bg-dark-bg dark:text-dark-text">
       <Header
         page={page}
         onPageSelect={setPage}
