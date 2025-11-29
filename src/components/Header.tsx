@@ -15,7 +15,7 @@ function Header({ page, onPageSelect, theme, onThemeChange }: HeaderProps) {
 
   return (
     <div className="flex flex-row justify-between items-center">
-      <h1 className="font-mono w-30 font-bold">Hugo Juarez</h1>
+      <h1 className="font-mono w-35 font-bold text-body-lg">Hugo Juarez</h1>
       <div className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
         <button
           className={`${buttonStyle} ${page === 'home' ? selectedSyle : ''}`}
@@ -36,7 +36,7 @@ function Header({ page, onPageSelect, theme, onThemeChange }: HeaderProps) {
           Contact
         </button>
       </div>
-      <div className="w-30 flex flex-row items-center justify-end">
+      <div className="w-35 flex flex-row items-center justify-end">
         <ThemeSelector theme={theme} onThemeChange={onThemeChange}/>
       </div>
     </div>
