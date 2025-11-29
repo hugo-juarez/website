@@ -1,13 +1,17 @@
+import ThemeSelector from "./ThemeSelector";
+
 interface HeaderProps {
   page: string;
   onPageSelect: (page: string) => void;
+  theme: string;
   onThemeChange: () => void;
 }
 
-function Header({ page, onPageSelect, onThemeChange }: HeaderProps) {
+function Header({ page, onPageSelect, theme, onThemeChange }: HeaderProps) {
   const buttonStyle =
     'cursor-pointer px-8 py-2 rounded-full hover:text-light-text dark:hover:text-dark-text';
-  const selectedSyle = 'bg-light-surface text-light-text dark:bg-dark-surface dark:text-dark-text';
+  const selectedSyle =
+    'bg-light-surface text-light-text dark:bg-dark-surface dark:text-dark-text';
 
   return (
     <div className="flex flex-row justify-between items-center">
@@ -33,19 +37,7 @@ function Header({ page, onPageSelect, onThemeChange }: HeaderProps) {
         </button>
       </div>
       <div className="w-30 flex flex-row items-center justify-end">
-        <button
-          className="w-5 h-5 text-light-text-muted hover:text-light-text dark:text-dark-text-muted cursor-pointer dark:hover:text-dark-text"
-          onClick={onThemeChange}
-        >
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            ></path>
-          </svg>
-        </button>
+        <ThemeSelector theme={theme} onThemeChange={onThemeChange}/>
       </div>
     </div>
   );

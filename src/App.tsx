@@ -24,6 +24,7 @@ function App() {
       <Header
         page={page}
         onPageSelect={setPage}
+        theme={theme}
         onThemeChange={() =>
           setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
         }
