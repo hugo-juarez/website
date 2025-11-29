@@ -9,9 +9,9 @@
 @import 'tailwindcss';
 
 /* ------------------------------------------
-   DARK THEME — DEFAULT
-   (No data-theme attribute needed)
+   Theme config
 ------------------------------------------- */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   

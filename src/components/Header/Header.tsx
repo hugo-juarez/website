@@ -1,9 +1,10 @@
 interface HeaderProps {
   page: string;
   onPageSelect: (page: string) => void;
+  onThemeChange: () => void;
 }
 
-function Header({page, onPageSelect }: HeaderProps) {
+function Header({ page, onPageSelect, onThemeChange }: HeaderProps) {
   const buttonStyle =
     'cursor-pointer px-8 py-2 rounded-full hover:text-dark-text';
   const selectedSyle = 'dark:bg-dark-surface dark:text-dark-text';
@@ -14,25 +15,28 @@ function Header({page, onPageSelect }: HeaderProps) {
       <div className="flex flex-row gap-8 text-dark-text-muted">
         <button
           className={`${buttonStyle} ${page === 'home' ? selectedSyle : ''}`}
-          onClick={()=>onPageSelect('home')}
+          onClick={() => onPageSelect('home')}
         >
           Home
         </button>
         <button
           className={`${buttonStyle} ${page === 'about' ? selectedSyle : ''}`}
-          onClick={()=>onPageSelect('about')}
+          onClick={() => onPageSelect('about')}
         >
           About
         </button>
         <button
           className={`${buttonStyle} ${page === 'contact' ? selectedSyle : ''}`}
-          onClick={()=>onPageSelect('contact')}
+          onClick={() => onPageSelect('contact')}
         >
           Contact
         </button>
       </div>
       <div className="w-30 flex flex-row items-center justify-end">
-        <button className="w-5 h-5 text-dark-text-muted cursor-pointer hover:text-dark-text">
+        <button
+          className="w-5 h-5 text-dark-text-muted cursor-pointer hover:text-dark-text"
+          onClick={onThemeChange}
+        >
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
               stroke-linecap="round"
