@@ -1,13 +1,13 @@
-import ThemeSelector from "./ThemeSelector";
+import { Link } from 'react-router-dom';
+import ThemeSelector from './ThemeSelector';
 
 interface HeaderProps {
   page: string;
-  onPageSelect: (page: string) => void;
   theme: string;
   onThemeChange: () => void;
 }
 
-function Header({ page, onPageSelect, theme, onThemeChange }: HeaderProps) {
+function Header({ page, theme, onThemeChange }: HeaderProps) {
   const buttonStyle =
     'cursor-pointer px-8 py-2 rounded-full hover:text-light-text dark:hover:text-dark-text';
   const selectedSyle =
@@ -16,28 +16,28 @@ function Header({ page, onPageSelect, theme, onThemeChange }: HeaderProps) {
   return (
     <div className="flex flex-row justify-between items-center">
       <h1 className="font-mono w-35 font-bold text-body-lg">Hugo Juarez</h1>
-      <div className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
-        <button
+      <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
+        <Link
           className={`${buttonStyle} ${page === 'home' ? selectedSyle : ''}`}
-          onClick={() => onPageSelect('home')}
+          to='/'
         >
           Home
-        </button>
-        <button
+        </Link>
+        <Link
           className={`${buttonStyle} ${page === 'about' ? selectedSyle : ''}`}
-          onClick={() => onPageSelect('about')}
+          to='/about'
         >
           About
-        </button>
-        <button
+        </Link>
+        <Link
           className={`${buttonStyle} ${page === 'contact' ? selectedSyle : ''}`}
-          onClick={() => onPageSelect('contact')}
+          to='/contact'
         >
           Contact
-        </button>
-      </div>
+        </Link>
+      </nav>
       <div className="w-35 flex flex-row items-center justify-end">
-        <ThemeSelector theme={theme} onThemeChange={onThemeChange}/>
+        <ThemeSelector theme={theme} onThemeChange={onThemeChange} />
       </div>
     </div>
   );
