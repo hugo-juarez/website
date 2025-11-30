@@ -3,11 +3,9 @@ import ThemeSelector from './ThemeSelector';
 
 interface HeaderProps {
   page: string;
-  theme: string;
-  onThemeChange: () => void;
 }
 
-function Header({ page, theme, onThemeChange }: HeaderProps) {
+function Header({ page }: HeaderProps) {
   const buttonStyle =
     'cursor-pointer px-8 py-2 rounded-full hover:text-light-text dark:hover:text-dark-text';
   const selectedSyle =
@@ -37,7 +35,7 @@ function Header({ page, theme, onThemeChange }: HeaderProps) {
         </Link>
       </nav>
       <div className="w-35 flex flex-row items-center justify-end">
-        <ThemeSelector theme={theme} onThemeChange={onThemeChange} />
+        <ThemeSelector />
       </div>
     </div>
   );

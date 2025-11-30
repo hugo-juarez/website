@@ -1,13 +1,13 @@
-interface ThemeSelectorProps {
-  theme: string;
-  onThemeChange: () => void;
-}
+import { useTheme } from '../contexts/ThemeContext';
 
-function ThemeSelector({ theme, onThemeChange }: ThemeSelectorProps) {
+
+function ThemeSelector() {
+  const {theme, toggleTheme} = useTheme();
+  
   return (
     <button
       className="w-5 h-5 text-light-text-muted hover:text-light-text dark:text-dark-text-muted cursor-pointer dark:hover:text-dark-text"
-      onClick={onThemeChange}
+      onClick={toggleTheme}
     >
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
         {theme === 'dark' && (
