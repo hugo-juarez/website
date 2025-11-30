@@ -3,7 +3,7 @@ import Header from '../../components/Header';
 function Home() {
   return (
     <>
-      <Header page="home" />
+      <Header />
       <section className="my-16 flex flex-col gap-4 text-body w-2/5">
         <h1 className="font-mono text-h1 mb-8">Hi, I'm Hugo</h1>
         <p>Embedded Software Engineer looking to improve it’s portfolio while building whatever comes to my mind.</p>
