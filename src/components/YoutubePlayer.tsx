@@ -47,6 +47,8 @@ function YoutubePlayer() {
 
   const [latestVideo, ...prevVideos] = youtubeData?.videos ?? [];
 
+  console.log(prevVideos)
+
   if (!youtubeData?.done)
     return (
       <div className="flex flex-col gap-4">
