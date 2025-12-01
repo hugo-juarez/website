@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+interface YoutubeStats {
+  subscriberCount: string;
+  viewCount: string;
+}
+
 interface YoutubeVideo {
   id: string;
   title: string;
@@ -8,39 +13,36 @@ interface YoutubeVideo {
   publishedAt: string;
 }
 
+interface YoutubeData {
+  stats: YoutubeStats;
+  videos: YoutubeVideo[];
+}
+
+
 function YoutubePlayer() {
-  const [videos, setVideos] = useState<YoutubeVideo[]>([]);
+  const [youtubeData, setYoutubeData] = useState<YoutubeData>();
 
   useEffect(() => {
-    const fetchVideos = async () => {
+    const fetchYoutubeData = async () => {
       try {
         const response = await axios.get('/api/youtube');
 
-        if (!response.data.items?.length) {
+        console.log(response)
+
+        if (!response.data.videos?.length) {
           throw new Error('Playlist not found or empty!');
         }
 
-        const newVideos = [];
-
-        for (const item of response.data.items) {
-          newVideos.push({
-            id: item.snippet.resourceId.videoId,
-            title: item.snippet.title,
-            thumbnail: item.snippet.thumbnails.high.url,
-            publishedAt: item.snippet.publishedAt,
-          });
-        }
-
-        setVideos(newVideos);
+        setYoutubeData(response.data);
       } catch (error) {
         console.error('Error fetching Youtube data: ', error);
       }
     };
 
-    fetchVideos();
+    fetchYoutubeData();
   }, []);
 
-  const [latestVideo, ...prevVideos] = videos;
+  const [latestVideo, ...prevVideos] = youtubeData?.videos ?? [];
 
   if (!latestVideo) return <></>;
 
