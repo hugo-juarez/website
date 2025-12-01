@@ -10,18 +10,11 @@ interface YoutubeVideo {
 
 function YoutubePlayer() {
   const [videos, setVideos] = useState<YoutubeVideo[]>([]);
-  console.log('VIDEOS:');
-  console.log(videos);
-
-  const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-  const PLAYLIST_ID = import.meta.env.VITE_YOUTUBE_PLAYLIST_ID;
 
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(
-          `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&key=${YOUTUBE_API_KEY}&maxResults=10`
-        );
+        const response = await axios.get('/api/youtube');
 
         if (!response.data.items?.length) {
           throw new Error('Playlist not found or empty!');
@@ -42,12 +35,31 @@ function YoutubePlayer() {
       } catch (error) {
         console.error('Error fetching Youtube data: ', error);
       }
-
-      fetchVideos();
     };
-  }, [YOUTUBE_API_KEY, PLAYLIST_ID]);
 
-  return <></>;
+    fetchVideos();
+  }, []);
+
+  const [latestVideo, ...prevVideos] = videos;
+
+  if (!latestVideo) return <></>;
+
+  return (
+    <div className='flex flex-col gap-4'>
+      <p className='text-body-lg font-bold'>Latest Video</p>
+      <div className="aspect-video rounded-lg overflow-hidden">
+        <iframe
+          width="100%"
+          height="100%"
+          src={`https://www.youtube.com/embed/${latestVideo.id}?autoplay=1&muted=1`}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  );
 }
 
 export default YoutubePlayer;
