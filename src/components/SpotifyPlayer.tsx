@@ -14,11 +14,8 @@ function SpotifyPlayer() {
   const [trackType, setTrackType] = useState<Tracks>("recent");
   const [spotifyData, setSpotifyData] = useState<SpotifyData>();
 
-  console.log(spotifyData);
-
   useEffect(() => {
     const fetchSpotifyData = async () => {
-      console.log("Spotify Data fetched");
       try {
         const response = await axios.get("/api/spotify");
 
@@ -77,7 +74,6 @@ function SpotifyPlayer() {
         <div className="flex flex-col justify-between">
           {spotifyData?.done &&
             tracks.slice(1).map((track, index) => {
-              console.log("track", track);
               return <Spotify key={index + track} url={track} className="h-20" />;
             })}
         </div>
