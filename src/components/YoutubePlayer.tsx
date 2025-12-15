@@ -27,8 +27,6 @@ function YoutubePlayer() {
       try {
         const response = await axios.get('/api/youtube');
 
-        console.log(response);
-
         if (!response.data.videos?.length) {
           throw new Error('Playlist not found or empty!');
         }
@@ -42,7 +40,7 @@ function YoutubePlayer() {
       }
     };
 
-    fetchYoutubeData();
+    //fetchYoutubeData();
   }, []);
 
   const [latestVideo, ...prevVideos] = youtubeData?.videos ?? [];
