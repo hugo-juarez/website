@@ -1,5 +1,6 @@
 import Header from '../../components/Header';
 import YoutubePlayer from '../../components/YoutubePlayer';
+import SpotifyPlayer from '../../components/SpotifyPlayer';
 
 function Home() {
   return (
@@ -25,6 +26,9 @@ function Home() {
         <div className='w-2/5'>
           <YoutubePlayer />
         </div>
+      </section>
+      <section className='w-full'>
+        <SpotifyPlayer />
       </section>
     </>
   );
