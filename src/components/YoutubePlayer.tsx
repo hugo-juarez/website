@@ -40,7 +40,7 @@ function YoutubePlayer() {
       }
     };
 
-    //fetchYoutubeData();
+    fetchYoutubeData();
   }, []);
 
   const [latestVideo, ...prevVideos] = youtubeData?.videos ?? [];
