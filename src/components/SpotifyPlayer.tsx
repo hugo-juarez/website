@@ -53,7 +53,7 @@ function SpotifyPlayer() {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-row justify-between items-center">
-        <h4 className="text-h4">Recently Played</h4>
+        <h4 className="text-h4">{trackType==="recent" ? "Recently Played" : "Top Track"}</h4>
         <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
           <button
             className={trackType === "recent" ? selectedSyle : buttonStyle}
