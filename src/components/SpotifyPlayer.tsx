@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { easeOut, motion, AnimatePresence } from "motion/react";
 import axios from "axios";
 import Spotify from "./Spotify";
 
@@ -53,7 +54,9 @@ function SpotifyPlayer() {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-row justify-between items-center">
-        <h4 className="text-h4">{trackType==="recent" ? "Recently Played" : "Top Track"}</h4>
+        <h4 className="text-h4">
+          {trackType === "recent" ? "Recently Played" : "Top Track"}
+        </h4>
         <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
           <button
             className={trackType === "recent" ? selectedSyle : buttonStyle}
@@ -69,14 +72,52 @@ function SpotifyPlayer() {
           </button>
         </nav>
       </div>
+
       <div className="grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
-        {spotifyData?.done && <Spotify key={tracks[0] + trackType } url={tracks[0]} className="h-[352px]"/>}
-        <div className="flex flex-col justify-between">
-          {spotifyData?.done &&
-            tracks.slice(1).map((track, index) => {
-              return <Spotify key={index + track} url={track} className="h-20" />;
-            })}
-        </div>
+        {spotifyData?.done && (
+          <motion.div
+            key={tracks[0] + trackType}
+            initial={{ opacity: 0, x: -300 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -300 }}
+            transition={{ duration: 0.5, ease: easeOut, delay: 1 }}
+          >
+            <Spotify
+              key={tracks[0] + trackType}
+              url={tracks[0]}
+              className="h-[352px]"
+            />
+          </motion.div>
+        )}
+        <AnimatePresence>
+          {spotifyData?.done && (
+            <motion.div
+              className="flex flex-col justify-between overflow-x-hidden"
+              key={trackType}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              {tracks.slice(1).map((track, index) => {
+                return (
+                  <motion.div
+                    key={index + track}
+                    initial={{ opacity: 0, x: 300 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 1.5 + index * 0.5,
+                    }}
+                  >
+                    <Spotify key={index + track} url={track} className="h-20" />
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
