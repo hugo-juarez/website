@@ -45,7 +45,8 @@ function YoutubePlayer() {
 
   const [latestVideo, ...prevVideos] = youtubeData?.videos ?? [];
 
-  console.log(prevVideos)
+  // TODO: Add previous videos showcase
+  // console.log(prevVideos)
 
   if (!youtubeData?.done)
     return (
