@@ -1,4 +1,3 @@
-import Header from '../components/Header';
 import YoutubePlayer from '../components/YoutubePlayer';
 import SpotifyPlayer from '../components/SpotifyPlayer';
 import FadeInSection from '../animations/FadeInSection';
@@ -6,9 +5,6 @@ import FadeInSection from '../animations/FadeInSection';
 function Home() {
   return (
     <>
-      <FadeInSection>
-        <Header />
-      </FadeInSection>
       <FadeInSection delay={0.5}>
       <section className="my-16 flex flex-row justify-between items-center">
         <div className="flex flex-col gap-4 text-body w-2/5">
