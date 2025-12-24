@@ -8,8 +8,8 @@ function Header() {
     'bg-light-surface text-light-text dark:bg-dark-surface dark:text-dark-text';
 
   return (
-    <div className="flex flex-row justify-between items-center">
-      <h1 className="font-mono w-35 font-bold text-body-lg">Hugo Juarez</h1>
+    <div className="flex flex-row justify-between items-center py-2">
+      <img src='/logo.png' className='w-10' />
       <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
         <NavLink
           className={({isActive})=> isActive ? selectedSyle : buttonStyle}
