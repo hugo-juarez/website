@@ -1,3 +1,4 @@
+import HoverButton from '../animations/HoverButton';
 import { useTheme } from '../contexts/ThemeContext';
 
 
@@ -5,6 +6,7 @@ function ThemeSelector() {
   const {theme, toggleTheme} = useTheme();
   
   return (
+    <HoverButton>
     <button
       className="w-5 h-5 text-light-text-muted hover:text-light-text dark:text-dark-text-muted cursor-pointer dark:hover:text-dark-text"
       onClick={toggleTheme}
@@ -28,6 +30,7 @@ function ThemeSelector() {
         )}
       </svg>
     </button>
+    </HoverButton>
   );
 }
 
