@@ -1,31 +1,39 @@
-import { NavLink } from 'react-router';
-import ThemeSelector from './ThemeSelector';
+import { NavLink } from "react-router";
+import ThemeSelector from "./ThemeSelector";
+import { motion } from "motion/react";
 
 function Header() {
   const buttonStyle =
-    'cursor-pointer px-8 py-2 rounded-full hover:text-light-text dark:hover:text-dark-text';
-  const selectedSyle = buttonStyle + " " +
-    'bg-light-surface text-light-text dark:bg-dark-surface dark:text-dark-text';
+    "cursor-pointer px-8 py-2 rounded-full hover:text-light-text dark:hover:text-dark-text";
+  const selectedSyle =
+    buttonStyle +
+    " " +
+    "bg-light-surface text-light-text dark:bg-dark-surface dark:text-dark-text";
 
   return (
     <div className="flex flex-row justify-between items-center py-2">
-      <img src='/logo.png' className='w-10' />
+      <NavLink to="/" end>
+        <img src="/logo.png" className="w-10" />
+      </NavLink>
       <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
         <NavLink
-          className={({isActive})=> isActive ? selectedSyle : buttonStyle}
-          to='/' end
+          className={({ isActive }) => (isActive ? selectedSyle : buttonStyle)}
+          to="/"
+          end
         >
           Home
         </NavLink>
         <NavLink
-          className={({isActive})=> isActive ? selectedSyle : buttonStyle}
-          to='/about' end
+          className={({ isActive }) => (isActive ? selectedSyle : buttonStyle)}
+          to="/about"
+          end
         >
           About
         </NavLink>
         <NavLink
-          className={({isActive})=> isActive ? selectedSyle : buttonStyle}
-          to='/contact' end
+          className={({ isActive }) => (isActive ? selectedSyle : buttonStyle)}
+          to="/contact"
+          end
         >
           Contact
         </NavLink>
