@@ -20,7 +20,7 @@ function Footer() {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 1, ease: "easeInOut" }}
     >
-      <div className="flex flex-col items-center text-light-text-muted dark:text-dark-text-muted gap-4 mt-4 mb-2">
+      <div className="flex flex-col items-center text-light-text-muted dark:text-dark-text-muted gap-4 mt-16 mb-2">
         <div className="flex flex-row justify-center items-center gap-8 text-h4">
           <HoverButton>
             <FaGithub />
