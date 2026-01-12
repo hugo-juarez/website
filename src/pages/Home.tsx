@@ -15,7 +15,7 @@ function Home() {
           </p>
           <p>
             Into low-level coding and making programms that have an effect on a
-            real life system.{' '}
+            real life system.
           </p>
           <p>
             I post videos mostly to keep myself on track, but if you like
