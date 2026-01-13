@@ -11,10 +11,12 @@ function Header() {
 
   return (
     <div className="flex flex-row justify-between items-center py-2">
-      <NavLink to="/" end>
-        <img src="/logo.png" className="w-10" />
-      </NavLink>
-      <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
+      <div className="w-10">
+        <NavLink to="/" end>
+          <img src="/logo.png" className="w-10" />
+        </NavLink>
+      </div>
+      <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted absolute left-1/2 transform -translate-x-1/2">
         {pages.map((page) => (
           <NavLink
             to={page.path}
@@ -24,7 +26,7 @@ function Header() {
             {({ isActive }) => (
               <>
                 {page.label}
-                {isActive && <motion.div 
+                {isActive && <motion.div
                   className="absolute inset-0 rounded-lg -z-10 bg-light-surface dark:bg-dark-surface"
                   layoutId="selected-page"
                 />}
@@ -33,7 +35,7 @@ function Header() {
           </NavLink>
         ))}
       </nav>
-      <div className="w-35 flex flex-row items-center justify-end">
+      <div className="flex flex-row items-center justify-end">
         <ThemeSelector />
       </div>
     </div>
