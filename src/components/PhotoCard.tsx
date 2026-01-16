@@ -48,9 +48,9 @@ function PhotoCard({ photo, isInView }: PhotoCardProps) {
             stiffness: 260,
             damping: 20,
           }}
-          className="bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden will-change-transform"
+          className="aspect-square h-60 bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden will-change-transform"
         >
-          <img src={photo.src} alt={photo.alt} className="object-fill h-50 w-35" />
+          <img src={photo.src} alt={photo.alt} className="object-cover aspect-square h-60" />
         </motion.div>
       </motion.div>
     </div>
