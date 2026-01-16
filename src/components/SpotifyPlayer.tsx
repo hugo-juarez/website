@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { easeOut, motion, AnimatePresence } from "motion/react";
-import axios from "axios";
-import Spotify from "./Spotify";
+import { useEffect, useState } from 'react';
+import { easeOut, motion, AnimatePresence } from 'motion/react';
+import axios from 'axios';
+import Spotify from './Spotify';
 
-type Tracks = "top" | "recent";
+type Tracks = 'top' | 'recent';
 
 interface SpotifyData {
   done: boolean;
@@ -12,24 +12,24 @@ interface SpotifyData {
 }
 
 function SpotifyPlayer() {
-  const [trackType, setTrackType] = useState<Tracks>("recent");
+  const [trackType, setTrackType] = useState<Tracks>('recent');
   const [spotifyData, setSpotifyData] = useState<SpotifyData>();
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
       try {
-        const response = await axios.get("/api/spotify");
+        const response = await axios.get('/api/spotify');
 
         if (
           !response.data.recent_tracks?.length ||
           !response.data.top_tracks?.length
         ) {
-          throw new Error("Playlist not found or empty!");
+          throw new Error('Playlist not found or empty!');
         }
 
         setSpotifyData({ done: true, ...response.data });
       } catch (error) {
-        console.error("Error fetching Spotify data: ", error);
+        console.error('Error fetching Spotify data: ', error);
       }
     };
 
@@ -37,36 +37,51 @@ function SpotifyPlayer() {
   }, []);
 
   const buttonStyle =
-    "cursor-pointer px-8 py-2 rounded-lg hover:text-light-text dark:hover:text-dark-text text-body";
+    'cursor-pointer px-8 py-2 rounded-lg hover:text-light-text dark:hover:text-dark-text text-body';
   const selectedSyle =
     buttonStyle +
-    " " +
-    "bg-light-surface text-light-text dark:bg-dark-surface dark:text-dark-text";
+    ' ' +
+    'bg-light-surface text-light-text dark:bg-dark-surface dark:text-dark-text';
 
   let tracks: string[] = [];
 
-  if (trackType === "top" && spotifyData) {
+  if (trackType === 'top' && spotifyData) {
     tracks = spotifyData.top_tracks;
-  } else if (trackType === "recent" && spotifyData) {
+  } else if (trackType === 'recent' && spotifyData) {
     tracks = spotifyData.recent_tracks;
   }
+
+  if (!spotifyData?.done)
+    return (
+      <div className="flex flex-col gap-8">
+        <h4 className="text-h4">Recently Played</h4>
+        <div className="grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
+          <div className="rounded-lg h-[352px] bg-light-surface dark:bg-dark-surface animate-pulse" />
+          <div className="flex flex-col justify-between overflow-x-hidden">
+            {Array.from({ length: 4 }, () => (
+              <div className="rounded-lg bg-light-surface dark:bg-dark-surface animate-pulse h-20" />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
 
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-row justify-between items-center">
         <h4 className="text-h4">
-          {trackType === "recent" ? "Recently Played" : "Top Track"}
+          {trackType === 'recent' ? 'Recently Played' : 'Top Track'}
         </h4>
         <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
           <button
-            className={trackType === "recent" ? selectedSyle : buttonStyle}
-            onClick={() => setTrackType("recent")}
+            className={trackType === 'recent' ? selectedSyle : buttonStyle}
+            onClick={() => setTrackType('recent')}
           >
             Recently Played
           </button>
           <button
-            className={trackType === "top" ? selectedSyle : buttonStyle}
-            onClick={() => setTrackType("top")}
+            className={trackType === 'top' ? selectedSyle : buttonStyle}
+            onClick={() => setTrackType('top')}
           >
             Top Tracks
           </button>
@@ -107,7 +122,7 @@ function SpotifyPlayer() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
                       duration: 0.5,
-                      ease: "easeOut",
+                      ease: 'easeOut',
                       delay: 1.5 + index * 0.5,
                     }}
                   >
