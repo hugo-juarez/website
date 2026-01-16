@@ -50,7 +50,7 @@ function PhotoCard({ photo, isInView }: PhotoCardProps) {
           }}
           className="bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden will-change-transform"
         >
-          <img src={photo.src} alt={photo.alt} className="object-fill" />
+          <img src={photo.src} alt={photo.alt} className="object-fill h-50 w-35" />
         </motion.div>
       </motion.div>
     </div>
