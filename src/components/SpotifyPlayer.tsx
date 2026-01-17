@@ -58,8 +58,8 @@ function SpotifyPlayer() {
         <div className="grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
           <div className="rounded-lg h-[352px] bg-light-surface dark:bg-dark-surface animate-pulse" />
           <div className="flex flex-col justify-between overflow-x-hidden">
-            {Array.from({ length: 4 }, () => (
-              <div className="rounded-lg bg-light-surface dark:bg-dark-surface animate-pulse h-20" />
+            {Array.from({ length: 4 }, (_,i) => (
+              <div key={i} className="rounded-lg bg-light-surface dark:bg-dark-surface animate-pulse h-20" />
             ))}
           </div>
         </div>
