@@ -36,7 +36,7 @@ export const projects = [
   {
     title: 'Drone',
     description:
-      'ESP32-based flight controller for hexacopter/quadcopter drones, with cascading PID control.',
+      'ESP32-based flight controller for hexacopter/quadcopter drones, with cascading PID control, , IMU sensor fusion, and comprehensive safety features.',
     tech: [
       { name: 'Drone', color: 'bg-cyan-500' },
       { name: 'C++', color: 'bg-blue-500' },
