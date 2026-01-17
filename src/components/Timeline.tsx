@@ -26,14 +26,14 @@ function Timeline({ hoverSection, setHoverSection }: TimelineProps) {
       className={`flex flex-row justify-center w-full py-8 opacity-${opacity}`}
     >
       <motion.div
-        className="flex flex-row w-3xl"
+        className="flex flex-col md:flex-row w-3xl"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <h2 className="w-1/4 my-8 text-h3 font-semibold">Timeline</h2>
-        <ul className="w-3/4 relative">
+        <h2 className="w-full md:w-1/4 md:my-8 text-h3 font-semibold">Timeline</h2>
+        <ul className="w-full md:w-3/4 relative">
           <div className="absolute left-0 top-0 bottom-0 w-px bg-light-surface dark:bg-dark-border" />
           {experiences.map((experience) => (
             <motion.li

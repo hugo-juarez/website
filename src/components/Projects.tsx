@@ -24,19 +24,19 @@ function Projects({ hoverSection, setHoverSection }: ProjectProps) {
   return (
     <div className={`flex flex-row justify-center w-full py-8`}>
       <motion.div
-        className="flex flex-row w-3xl"
+        className="flex flex-col md:flex-row w-3xl"
         animate={{ opacity: opacity ? 1 : 0.5 }}
         whileHover={{ scale: 1.05 }}
         transition={{ ease: 'easeInOut' }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <h2 className="w-1/4 mb-8 text-h3 font-semibold">Projects</h2>
-        <ul className="w-3/4 relative text-sm">
+        <h2 className="w-full md:w-1/4 mb-8 text-h3 font-semibold">Projects</h2>
+        <ul className="w-full md:w-3/4 relative text-sm">
           {projects.map((project) => (
             <motion.a
               key={project.title}
-              className="group flex flex-row mb-8 ml-4 justify-between"
+              className="group flex flex-row mb-8 md:ml-4 justify-between"
               whileHover={{ scale: 1.05 }}
               style={{ transformOrigin: 'left' }}
               href={project.link}
@@ -50,7 +50,7 @@ function Projects({ hoverSection, setHoverSection }: ProjectProps) {
                   {project.description}
                 </p>
               </div>
-              <div className="flex flex-wrap gap-2 w-1/4">
+              <div className="flex flex-wrap gap-2 w-1/3 md:w-1/4">
                 {project.tech.map((tech) => (
                   <span
                     key={tech.name}

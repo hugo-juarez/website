@@ -11,9 +11,10 @@ interface Photo {
 interface PhotoCardProps {
   photo: Photo;
   isInView: boolean;
+  className?: string;
 }
 
-function PhotoCard({ photo, isInView }: PhotoCardProps) {
+function PhotoCard({ photo, isInView, className = '' }: PhotoCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleMouseEnter = () => {
@@ -25,7 +26,7 @@ function PhotoCard({ photo, isInView }: PhotoCardProps) {
   };
 
   return (
-    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={className}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={
@@ -48,9 +49,9 @@ function PhotoCard({ photo, isInView }: PhotoCardProps) {
             stiffness: 260,
             damping: 20,
           }}
-          className="aspect-square h-56 bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden will-change-transform"
+          className="aspect-square h-32 md:h-56 bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden will-change-transform"
         >
-          <img src={photo.src} alt={photo.alt} className="object-cover aspect-square h-56" />
+          <img src={photo.src} alt={photo.alt} className="object-cover aspect-square h-32 md:h-56" />
         </motion.div>
       </motion.div>
     </div>

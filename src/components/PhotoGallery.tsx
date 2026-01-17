@@ -47,8 +47,13 @@ function PhotoGallery() {
   return (
     <div ref={ref} className="w-full flex justify-center">
       <div className="flex -space-x-5 w-1/2 my-12 justify-center">
-        {photos.map((photo) => (
-          <PhotoCard key={photo.id} photo={photo} isInView={isInView} />
+        {photos.map((photo, index) => (
+          <PhotoCard
+            key={photo.id}
+            photo={photo}
+            isInView={isInView}
+            className={index >= 2 ? 'hidden md:block' : ''}
+          />
         ))}
       </div>
     </div>
