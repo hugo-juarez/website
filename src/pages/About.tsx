@@ -1,19 +1,22 @@
+import { useState } from 'react';
 import FadeInSection from '../animations/FadeInSection';
 import PhotoGallery from '../components/PhotoGallery';
 import Projects from '../components/Projects';
 import Timeline from '../components/Timeline';
 
 function About() {
+  const [hoverSection, setHoverSection] = useState("");
+
   return (
     <section>
       <h2 className="text-h2 mt-8 mb-4 font-semibold">About me</h2>
       <p>The short version</p>
       <PhotoGallery />
       <FadeInSection delay={1}>
-        <Timeline />
+        <Timeline hoverSection={hoverSection} setHoverSection={setHoverSection}/>
       </FadeInSection>
       <FadeInSection delay={1.5}>
-        <Projects />
+        <Projects hoverSection={hoverSection} setHoverSection={setHoverSection}/>
       </FadeInSection>
     </section>
   );
