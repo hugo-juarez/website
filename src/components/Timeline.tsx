@@ -1,4 +1,4 @@
-import { curriculum } from '../data/curriculum';
+import { experiences } from '../data/curriculum';
 import { motion } from 'motion/react';
 
 function Timeline() {
@@ -8,7 +8,7 @@ function Timeline() {
         <h2 className="w-1/4 my-8 text-h3 font-semibold">Timeline</h2>
         <ul className="w-3/4 relative">
           <div className="absolute left-0 top-0 bottom-0 w-px bg-light-surface dark:bg-dark-border" />
-          {curriculum.map((experience) => (
+          {experiences.map((experience) => (
             <motion.li className="text-body-sm my-8 relative ml-4 cursor-default" whileHover={{scale: 1.05}} style={{transformOrigin: 'left'}}>
               <div
                 className={`absolute aspect-square -left-5 rounded-2xl top-1 w-2 y-2 ${experience.dotColot} ring-4 ring-light-surface dark:ring-dark-surface`}

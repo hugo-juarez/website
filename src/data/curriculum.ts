@@ -1,4 +1,4 @@
-export const curriculum = [
+export const experiences = [
   {
     company: 'GE Healthcare',
     date: '2025 - Now',
