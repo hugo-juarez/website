@@ -37,7 +37,7 @@ function SpotifyPlayer() {
   }, []);
 
   const buttonStyle =
-    'cursor-pointer px-8 py-2 rounded-lg hover:text-light-text dark:hover:text-dark-text text-body';
+    'cursor-pointer px-4 py-1.5 md:px-8 md:py-2 rounded-lg hover:text-light-text dark:hover:text-dark-text text-body';
   const selectedSyle =
     buttonStyle +
     ' ' +
@@ -55,7 +55,8 @@ function SpotifyPlayer() {
     return (
       <div className="flex flex-col gap-8">
         <h4 className="text-h4 font-semibold">Recently Played</h4>
-        <div className="grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
+        {/* Desktop loading */}
+        <div className="hidden md:grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
           <div className="rounded-lg h-[352px] bg-light-surface dark:bg-dark-surface animate-pulse" />
           <div className="flex flex-col justify-between overflow-x-hidden">
             {Array.from({ length: 4 }, (_,i) => (
@@ -63,12 +64,20 @@ function SpotifyPlayer() {
             ))}
           </div>
         </div>
+        {/* Mobile loading */}
+        <div className="md:hidden flex flex-col gap-4 mb-8">
+          <div className="rounded-lg h-[352px] bg-light-surface dark:bg-dark-surface animate-pulse" />
+          {Array.from({ length: 4 }, (_,i) => (
+            <div key={i} className="rounded-lg bg-light-surface dark:bg-dark-surface animate-pulse h-20" />
+          ))}
+        </div>
       </div>
     );
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-row justify-between items-center">
+      {/* Desktop: Title and buttons side by side */}
+      <div className="hidden md:flex flex-row justify-between items-center">
         <h4 className="text-h4 font-semibold">
           {trackType === 'recent' ? 'Recently Played' : 'Top Track'}
         </h4>
@@ -88,7 +97,43 @@ function SpotifyPlayer() {
         </nav>
       </div>
 
-      <div className="grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
+      {/* Mobile: Title, first track, then buttons */}
+      <div className="md:hidden flex flex-col gap-4">
+        <h4 className="text-h4 font-semibold text-left my-2">
+          {trackType === 'recent' ? 'Recently Played' : 'Top Track'}
+        </h4>
+        {spotifyData?.done && (
+          <motion.div
+            key={tracks[0] + trackType + 'mobile'}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, ease: easeOut }}
+          >
+            <Spotify
+              key={tracks[0] + trackType}
+              url={tracks[0]}
+              className="h-20"
+            />
+          </motion.div>
+        )}
+        <nav className="mt-4 flex flex-row gap-4 text-light-text-muted dark:text-dark-text-muted justify-center">
+          <button
+            className={trackType === 'recent' ? selectedSyle : buttonStyle}
+            onClick={() => setTrackType('recent')}
+          >
+            Recently Played
+          </button>
+          <button
+            className={trackType === 'top' ? selectedSyle : buttonStyle}
+            onClick={() => setTrackType('top')}
+          >
+            Top Tracks
+          </button>
+        </nav>
+      </div>
+
+      {/* Desktop: Grid layout */}
+      <div className="hidden md:grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
         {spotifyData?.done && (
           <motion.div
             key={tracks[0] + trackType}
@@ -133,6 +178,30 @@ function SpotifyPlayer() {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
+
+      {/* Mobile: Column layout for remaining tracks */}
+      <div className="md:hidden flex flex-col gap-4 mb-8">
+        {spotifyData?.done && (
+          <>
+            {tracks.slice(1).map((track, index) => {
+              return (
+                <motion.div
+                  key={index + track + 'mobile'}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: easeOut,
+                    delay: index * 0.1,
+                  }}
+                >
+                  <Spotify key={index + track} url={track} className="h-20" />
+                </motion.div>
+              );
+            })}
+          </>
+        )}
       </div>
     </div>
   );

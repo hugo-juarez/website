@@ -10,18 +10,18 @@ function Header() {
   ];
 
   return (
-    <div className="flex flex-row justify-between items-center py-2">
-      <div className="w-10">
+    <div className="flex flex-row justify-between items-center py-2 relative">
+      <div className="w-8 md:w-10">
         <NavLink to="/" end>
-          <img src="/logo.png" className="w-10" />
+          <img src="/logo.png" className="w-8 md:w-10" />
         </NavLink>
       </div>
-      <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted absolute left-1/2 transform -translate-x-1/2">
+      <nav className="flex flex-row gap-2 md:gap-8 text-light-text-muted dark:text-dark-text-muted md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
         {pages.map((page) => (
           <NavLink
             key={page.label}
             to={page.path}
-            className={({isActive}) => `cursor-pointer px-8 py-2 rounded-full hover:text-light-text dark:hover:text-dark-text relative z-0 ${isActive ? "text-light-text dark:text-dark-text" : ""}`}
+            className={({isActive}) => `cursor-pointer px-2 md:px-8 py-1 md:py-2 rounded-full hover:text-light-text dark:hover:text-dark-text relative z-0 text-sm md:text-base ${isActive ? "text-light-text dark:text-dark-text" : ""}`}
             end
           >
             {({ isActive }) => (
