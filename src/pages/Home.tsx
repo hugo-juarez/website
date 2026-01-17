@@ -8,7 +8,7 @@ function Home() {
       <FadeInSection delay={0.5}>
       <section className="my-16 flex flex-row justify-between items-center">
         <div className="flex flex-col gap-4 text-body w-2/5">
-          <h1 className="text-h1 mb-8">Hi, I'm Hugo</h1>
+          <h1 className="text-h1 mb-8 font-semibold">Hi, I'm Hugo</h1>
           <p>
             Embedded Software Engineer looking to improve it’s portfolio while
             building whatever comes to my mind.

@@ -54,7 +54,7 @@ function SpotifyPlayer() {
   if (!spotifyData?.done)
     return (
       <div className="flex flex-col gap-8">
-        <h4 className="text-h4">Recently Played</h4>
+        <h4 className="text-h4 font-semibold">Recently Played</h4>
         <div className="grid grid-cols-[1fr_1fr] h-[352px] gap-8 mb-8">
           <div className="rounded-lg h-[352px] bg-light-surface dark:bg-dark-surface animate-pulse" />
           <div className="flex flex-col justify-between overflow-x-hidden">
@@ -69,7 +69,7 @@ function SpotifyPlayer() {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-row justify-between items-center">
-        <h4 className="text-h4">
+        <h4 className="text-h4 font-semibold">
           {trackType === 'recent' ? 'Recently Played' : 'Top Track'}
         </h4>
         <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted">
