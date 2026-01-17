@@ -17,7 +17,7 @@ function Contact() {
               {contactLinks.map((link) => (
                 <motion.a
                 key={link.title}
-                  className="group flex flex-row items-center w-full py-2 px-4 gap-4 border rounded-lg border-light-border dark:border-dark-border"
+                  className="group flex flex-row items-center w-full py-2 px-4 gap-4 border rounded-lg border-light-surface dark:border-dark-border"
                   href={link.link}
                   target="_blank"
                   variants={{
