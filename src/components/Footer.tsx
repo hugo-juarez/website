@@ -23,22 +23,34 @@ function Footer() {
     >
       <div className="flex flex-row justify-center items-center gap-8 text-h4">
         <HoverButton>
-          <FaGithub />
+          <a href="https://github.com/hugo-juarez" target="_blank">
+            <FaGithub />
+          </a>
         </HoverButton>
         <HoverButton>
-          <FaLinkedin />
+          <a href="https://www.linkedin.com/in/hugos-juarez/" target="_blank">
+            <FaLinkedin />
+          </a>
         </HoverButton>
         <HoverButton>
-          <FaDiscord />
+          <a href="https://discord.com/users/blurry_face" target="_blank">
+            <FaDiscord />
+          </a>
         </HoverButton>
         <HoverButton>
-          <FaInstagram />
+          <a href="https://www.instagram.com/hugos_jp/" target="_blank">
+            <FaInstagram />
+          </a>
         </HoverButton>
         <HoverButton>
-          <FaSpotify />
+          <a href="https://open.spotify.com/user/sry30irz17b7tdwfkkj0e4yit" target="_blank">
+            <FaSpotify />
+          </a>
         </HoverButton>
         <HoverButton>
-          <FaYoutube />
+          <a href="https://www.youtube.com/@HugoSJuarez" target="_blank">
+            <FaYoutube />
+          </a>
         </HoverButton>
       </div>
       <p className="text-caption">@ 2025 Hugo Juarez. All rights reserved.</p>
