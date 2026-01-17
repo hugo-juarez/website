@@ -11,7 +11,7 @@ function HoverButton({ children }: FadeInSectionProps) {
 
   return (
     <motion.div
-      initial={{scale: 1, color: `${theme == "dark" ? "#9CA3AF" : "#4B5563"}`}}
+      animate={{ scale: 1, color: `${theme == "dark" ? "#9CA3AF" : "#4B5563"}` }}
       whileHover={{ scale: 1.15, color: `${theme == "dark" ? "#E5E7EB" : "#0F0F15"}` }}
       className="cursor-pointer"
     >
