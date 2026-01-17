@@ -16,19 +16,19 @@ export const curriculum = [
     dotColot: 'bg-blue-400',
   },
   {
-    company: 'Monterrey Institute of Technology and Higher Education (ITESM)',
-    date: '2023 - 2019',
-    title: 'B.S. Mechatronic Engineer',
-    description:
-      'Got my degree and graduated top of the class.',
-    dotColot: 'bg-yellow-500',
-  },
-  {
     company: 'Voluntary Intelligence Center',
-    date: '2023 - 2019',
+    date: '2023 - 2023',
     title: 'Embedded Software Engineer Co-Op',
     description:
       'Engineered autonomous drone system for disaster response reconnaissance.',
     dotColot: 'bg-red-500',
+  },
+  {
+    company: 'Monterrey Institute of Technology and Higher Education (ITESM)',
+    date: '2019 - 2023',
+    title: 'B.S. Mechatronic Engineer',
+    description:
+      'Got my degree and graduated top of the class.',
+    dotColot: 'bg-yellow-500',
   }
 ];
