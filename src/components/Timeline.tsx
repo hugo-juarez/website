@@ -7,7 +7,7 @@ interface TimelineProps {
 }
 
 function Timeline({ hoverSection, setHoverSection }: TimelineProps) {
-  let opacity = 100;
+  let opacity = true;
 
   const handleMouseEnter = () => {
     setHoverSection('Timeline');
@@ -18,7 +18,7 @@ function Timeline({ hoverSection, setHoverSection }: TimelineProps) {
   };
 
   if (hoverSection && hoverSection != 'Timeline') {
-    opacity = 50;
+    opacity = false;
   }
 
   return (
@@ -27,6 +27,7 @@ function Timeline({ hoverSection, setHoverSection }: TimelineProps) {
     >
       <motion.div
         className="flex flex-col md:flex-row w-3xl"
+        animate={{ opacity: opacity ? 1 : 0.5 }}
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         onMouseEnter={handleMouseEnter}
@@ -46,7 +47,7 @@ function Timeline({ hoverSection, setHoverSection }: TimelineProps) {
                 className={`absolute aspect-square -left-5 rounded-2xl top-1 w-2 y-2 ${experience.dotColot} ring-4 ring-light-surface dark:ring-dark-surface`}
               />
               <div className="flex flex-row justify-between">
-                <h4 className="">{experience.company}</h4>
+                <h4 className="w-3/5 sm:w-auto">{experience.company}</h4>
                 <p className="text-light-text-muted dark:text-dark-text-muted">
                   {experience.date}
                 </p>
