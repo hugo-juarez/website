@@ -13,11 +13,11 @@ function Home() {
             Embedded Software Engineer looking to improve it's portfolio while
             building whatever comes to my mind.
           </p>
-          <p>
+          <p className="hidden md:block">
             Into low-level coding and making programms that have an effect on a
             real life system.
           </p>
-          <p>
+          <p className="hidden md:block">
             I post videos mostly to keep myself on track, but if you like
             watching someone casually struggle through projects, feel free to
             follow.
