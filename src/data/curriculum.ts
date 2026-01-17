@@ -27,8 +27,51 @@ export const experiences = [
     company: 'Monterrey Institute of Technology and Higher Education (ITESM)',
     date: '2019 - 2023',
     title: 'B.S. Mechatronic Engineer',
-    description:
-      'Got my degree and graduated top of the class.',
+    description: 'Got my degree and graduated top of the class.',
     dotColot: 'bg-yellow-500',
-  }
+  },
+];
+
+export const projects = [
+  {
+    title: 'Drone',
+    description:
+      'ESP32-based flight controller for hexacopter/quadcopter drones, with cascading PID control.',
+    tech: [
+      { name: 'Drone', color: 'cyan' },
+      { name: 'C++', color: 'blue' },
+      { name: 'PID', color: 'yellow' },
+      { name: 'ESP32', color: 'yellow' },
+      { name: 'Firmware', color: 'yellow' },
+    ],
+    link: 'https://github.com/hugo-juarez/ESP32_Drone',
+  },
+  {
+    title: 'AGV Bakery',
+    description:
+      'Autonomous AGV system for contactless bakery stores using RFID, AWS IoT, YOLOv4 object detection on Raspberry Pi, and facial recognition.',
+    tech: [
+      { name: 'IoT', color: 'cyan' },
+      { name: 'AWS', color: 'yellow' },
+      { name: 'MQTT', color: 'yellow' },
+      { name: 'Yolov4', color: 'yellow' },
+      { name: 'C++', color: 'blue' },
+      { name: 'Python', color: 'yellow' },
+    ],
+    link: 'https://github.com/hugo-juarez/AGVPanaderia',
+  },
+  {
+    title: 'STM32 Library',
+    description:
+      'Bare-metal driver library for STM32F407xx microcontroller with GPIO, SPI, I2C, UART support and BSP for DS1307 RTC and LCD display ',
+    tech: [
+      { name: 'Firmware', color: 'cyan' },
+      { name: 'STM32', color: 'yellow' },
+      { name: 'I2C', color: 'yellow' },
+      { name: 'USART', color: 'yellow' },
+      { name: 'CAN', color: 'blue' },
+      { name: 'RTC', color: 'yellow' },
+    ],
+    link: 'https://github.com/hugo-juarez/stm32-driver',
+  },
 ];
