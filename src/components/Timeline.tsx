@@ -37,6 +37,7 @@ function Timeline({ hoverSection, setHoverSection }: TimelineProps) {
           <div className="absolute left-0 top-0 bottom-0 w-px bg-light-surface dark:bg-dark-border" />
           {experiences.map((experience) => (
             <motion.li
+              key={experience.title}
               className="text-body-sm my-8 relative ml-4 cursor-default"
               whileHover={{ scale: 1.05 }}
               style={{ transformOrigin: 'left' }}

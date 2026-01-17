@@ -19,6 +19,7 @@ function Header() {
       <nav className="flex flex-row gap-8 text-light-text-muted dark:text-dark-text-muted absolute left-1/2 transform -translate-x-1/2">
         {pages.map((page) => (
           <NavLink
+            key={page.label}
             to={page.path}
             className={({isActive}) => `cursor-pointer px-8 py-2 rounded-full hover:text-light-text dark:hover:text-dark-text relative z-0 ${isActive ? "text-light-text dark:text-dark-text" : ""}`}
             end

@@ -35,6 +35,7 @@ function Projects({ hoverSection, setHoverSection }: ProjectProps) {
         <ul className="w-3/4 relative text-sm">
           {projects.map((project) => (
             <motion.a
+              key={project.title}
               className="group flex flex-row mb-8 ml-4 justify-between"
               whileHover={{ scale: 1.05 }}
               style={{ transformOrigin: 'left' }}
