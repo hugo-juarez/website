@@ -9,11 +9,11 @@ function Contact() {
       <p>Let's connect</p>
       <FadeInSection delay={0.5}>
         <div className="w-full flex justify-center items-center">
-          <div className="w-2/3">
+          <div className="w-full md:w-2/3">
             <p className="mt-8 text-light-text-muted dark:text-dark-text-muted">
               Contact me through my socials:
             </p>
-            <div className="grid grid-cols-2 gap-8 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {contactLinks.map((link) => (
                 <motion.a
                 key={link.title}
