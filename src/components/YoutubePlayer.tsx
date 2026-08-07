@@ -43,7 +43,7 @@ function YoutubePlayer() {
     fetchYoutubeData();
   }, []);
 
-  const [latestVideo] = youtubeData?.videos ?? [];
+  const [_, latestVideo] = youtubeData?.videos ?? [];
 
   // TODO: Add previous videos showcase
   // console.log(prevVideos)
